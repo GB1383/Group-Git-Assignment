@@ -1,1 +1,1 @@
-# Group-Git-Assignment
+# JavaScript part
