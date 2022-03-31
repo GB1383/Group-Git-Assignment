@@ -1,0 +1,45 @@
+//(function () {
+
+
+//})();
+
+const form = document.querySelector("form");
+//const formControl = document.querySelector("form-control");
+const username = document.getElementById("username")
+const username = document.getElementById("password")
+const username = document.getElementById("passworrd2")
+//const error  = formControl.querySelector("small")
+//const error = document.querySelector(".form-control small")
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    checkInputs();
+});
+
+function checkInputs() {
+const usernameValue = username.value.trim();
+const passwordValue = password.value.trim();
+const password2Value = password2.value.trim();
+
+if (username === "") {
+//small.style.visibilty = "visible";
+//small.textContent = "Error: usernme is required";
+setError(username, "Error: username cannot be empty");
+}
+
+if (username === "") {
+    setError(password, "Error: password cannot be empty");
+}
+
+function setError(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small")
+    formControl.className = "form-control error";
+    small.textContent = message;
+    console.log(formControl)
+}
+
+function setSuccess(input) {
+    const formControl = input.parentElement;
+    formControl.className = "form-control success"
+}
